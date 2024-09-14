@@ -2,13 +2,18 @@
 import './index.css'
 
 const DestinationItem = props => {
-  const {destinationDetails, key} = props
+  const {destinationDetails, deleteDestination} = props
   const {id, name, imgUrl} = destinationDetails
+
+  const onDelete = () => {
+    deleteDestination(id)
+  }
+
   return (
-    <div className="container">
+    <li className="container">
       <img src={imgUrl} alt={name} className="image" />
-      <h2>{name}</h2>
-    </div>
+      <p>{name}</p>
+    </li>
   )
 }
 
